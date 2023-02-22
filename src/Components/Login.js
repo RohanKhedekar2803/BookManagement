@@ -5,14 +5,18 @@ import vector1 from '../assets/logovector.jpg'
 import { Email } from '@material-ui/icons';
 import 'boxicons'
 import { useState } from 'react';
+import UserService from './Services/UserService';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-
+  
+  // const [error, setError] = useError(false)
   const [user, setUser] = useState({ 
     email: "",
     password: ""
   });
   
+  const navigate=useNavigate();
   const handleEvent=(e)=>{
     const value =e.target.value
     setUser({...user,[e.target.name]: value});
@@ -20,9 +24,20 @@ const Login = () => {
   const loginUser=(e)=>{
     e.preventDefault();
     console.log(user)
-    //api call to save    
+    //api call to save 
+    UserService.saveuser(user).then(()=>navigate("/")) 
+    //if there is any error set error to true; and call clearuser    
     //  navigate("/")
  }
+
+ const clearUser=(e)=>{
+  e.preventDefault();
+  setUser({
+    username: "",
+    email: "",
+    password: ""
+  })
+}
 
   return (
     <div className=' h-screen w-screen flex  bg-white p-6'>

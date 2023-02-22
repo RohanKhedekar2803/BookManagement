@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import Login from './Components/Login';
 import Signup from './Components/Signup';
 import Landpage from './Components/Landpage';
+import Profile from './Components/Profile';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,6 +15,7 @@ root.render(
         <Route path="/" element={<Landpage/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<Signup/>} />
+        <Route path="/profile" element={<Profile/>} />
         
         
          
