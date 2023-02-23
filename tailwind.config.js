@@ -8,5 +8,7 @@ module.exports = {
       'hero': "url('../public/bg.png')"
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar-hide')
+  ],
 }

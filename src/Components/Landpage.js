@@ -10,7 +10,7 @@ import Modal from '@material-ui/core/Modal';
 import CategoryChip from './CategoryChip';
 import BookShowcaseCard from './BookShowcaseCard';
 import LandingPageHeroComponent from './LandingPageHeroComponent';
-import SearchBar from './SearchBar';
+
 
 const Landpage = () => {
       const [open, setOpen] = React.useState(false);
